@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title> Registration Form</title>
+<!-- javascript -->
+
+<script type="text/javascript">
+    function validateForm() {
+        
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("pass").value;
+        var confirmPassword = document.getElementById("cpass").value;
+        
+        if (email === "") {
+            alert("Email must be filled out");
+            return false;
+        }
+       
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailPattern.test(email)) {
+            alert("Invalid email address");
+            return false;
+        }
+        if (password === "") {
+            alert("Password must be filled out");
+            return false;
+        }
+        if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                event.preventDefault(); 
+            }
+
+
+      
+    }
+</script>
+
+<!-- css -->
+
+<style>
+    body{
+        background-image: url(img/erik-mclean-8SeJUmfahu0-unsplash.jpg);
+        background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  font-family:'Times New Roman', Times, serif;
+   
+  /* text-align: center; */
+  
+    }
+ #text {
+  width: 90%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: content-box;
+}
+#pass{
+    width: 90%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: content-box;
+}
+#email{
+    width: 90%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: content-box;
+}
+#cpass{
+    width: 90%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: content-box;
+}
+
+ 
+input[type=button], input[type=submit] {
+  background-color: #000000;
+  border: none;
+  color: white;
+  padding: 16px 62px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 12%;
+ 
+
+  
+}
+
+</style>
+    </head>
+    <!-- form -->
+    <body>
+        <div style="text-shadow: 5px 5px 5px ; color: rgb(157, 205, 216); font-size: 15px;text-align: center; background-color: rgb(2, 2, 12); opacity: 0.9; border-style: double;; margin-left: 360px; margin-right: 360px">
+        <h1>Welcome to Comic Website</h1>
+        <h2>Sign Up</h2>
+    </div>
+    <br>
+    <div style="background-color: rgb(124, 191, 243); opacity: 0.9; margin-left: 360px; margin-right: 360px;padding-top: 10px ; padding-left: 30px; padding-bottom: 10px; font-weight: bold;">
+
+        <form onsubmit="return validateForm()">
+    <label>First Name</label> <br>
+    <input type="text" id="text" name="fname">
+    <br>
+    <label>Last Name</label> <br>
+    <input type="text" id="text" name="fname">
+    <br>
+    <label>Email</label> <br>
+    <input type="email" id="email" name="fname">
+    <br>
+    <label>Password</label> <br>
+    <input type="password" name="pass" id="pass">
+    <br>
+    <label>Confim Password</label> <br>
+    <input type="password" name="cpas" id="cpass">
+    <br>
+    <label>Date of Birth</label> <br>
+    <input type="date" id="text">
+    <br>
+    <label>Gender</label><br>
+    <input type="radio" name="gender" id="female" value="female">
+    <label for="female"> Female</label>
+    <input type="radio" name="gender" id="male " value="male">
+    <label for="male"> Male </label>
+    <input type="radio" name="gender" id="non-binary" value="non-binary">
+    <label for="non-binary"> Non-Binary</label>
+    <input type="radio" name="gender" id="prefernot " value="prefernot">
+    <label for="prefernot"> Prefer not to say</label> <br>
+    <input type="checkbox" name="term" id="term " value="term">
+    <label for="term">Agree to terms & conditions</label><br>
+    <input type="submit" value="submit" >
+</form>
+</div>
+    
+
+    </body>
+</html>
